@@ -1,0 +1,2 @@
+rootProject.name='DailyGoal'
+include ':app'
