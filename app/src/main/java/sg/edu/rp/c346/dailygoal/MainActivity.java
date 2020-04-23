@@ -26,10 +26,19 @@ public class MainActivity extends AppCompatActivity {
                 RadioGroup rg1 = (RadioGroup) findViewById(R.id.radioGroup1);
                 RadioGroup rg2 = (RadioGroup) findViewById(R.id.radioGroup2);
                 RadioGroup rg3 = (RadioGroup) findViewById(R.id.radioGroup3);
+                // Get the Id of the selected radio button in the RadioGroup
+                int selectedButtonId1 = rg1.getCheckedRadioButtonId();
+                int selectedButtonId2 = rg2.getCheckedRadioButtonId();
+                int selectedButtonId3 = rg3.getCheckedRadioButtonId();
+                // Get the radio button object from the Id we had gotten above
+                RadioButton rb1 = (RadioButton) findViewById(selectedButtonId1);
+                RadioButton rb2 = (RadioButton) findViewById(selectedButtonId2);
+                RadioButton rb3 = (RadioButton) findViewById(selectedButtonId3);
                 // Get the comment that user keys in name
                 EditText etComment = (EditText) findViewById(R.id.editTextComment);
                 // Put the editText into an array
-                String[] info = {etComment.getText().toString()};
+                String[] info = {rb1.getText().toString(),
+                        rb2.getText().toString(), rb3.getText().toString(), etComment.getText().toString()};
                 // Create an intent to start another activity called
                 // Summary (which we would create Later)
                 Intent i = new Intent(MainActivity.this, Summary.class);
